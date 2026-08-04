@@ -1,46 +1,38 @@
-%% 1. 회로 파라미터 설정 및 초기화
-clear; clc; close all;
+# ⚡ RLC Circuit Simulation (RLC 회로 시뮬레이션)
 
-% 소자값 및 입력 전압 (R 값을 바꿔가며 테스트 가능)
-L  = 0.1;       % 인덕턴스 (H)
-C  = 100e-6;    % 커패시턴스 (F)
-V0 = 10;        % 입력 전압 (V)
+MATLAB을 활용하여 RLC 회로의 응답 특성을 시뮬레이션하고, 감쇠 조건(과감쇠, 임계감쇠, 부족감쇠)에 따른 전압 변화를 가시화하는 프로젝트입니다.
 
-% 임계 저항값 R_critical = 2 * sqrt(L/C) ~= 63.25 ohm
-R  = 63.25;     % 저항값 (ohm)
+---
 
-% 주요 파라미터 계산
-alpha  = R / (2 * L);           % 감쇠 계수
-omega0 = 1 / sqrt(L * C);       % 고유 진동수
-t      = linspace(0, 0.05, 1000);% 시간 축 (0 ~ 50ms)
+## 📌 프로젝트 소개
+RLC 직렬 회로에서 저항($R$), 인덕턴스($L$), 커패시턴스($C$) 값에 따라 달라지는 회로의 과도 응답(Transient Response)을 해석합니다.
 
-%% 2. 감쇠 조건 판별 및 수식 계산
-if alpha > omega0
-    % 과감쇠 (Overdamped)
-    state_str = '과감쇠 (Overdamped)';
-    s1 = -alpha + sqrt(alpha^2 - omega0^2);
-    s2 = -alpha - sqrt(alpha^2 - omega0^2);
-    Vc = V0 + V0/(s1 - s2) * (s2*exp(s1*t) - s1*exp(s2*t));
+* **과감쇠 (Overdamped):** $\alpha > \omega_0$
+* **임계감쇠 (Critically Damped):** $\alpha = \omega_0$
+* **부족감쇠 (Underdamped):** $\alpha < \omega_0$
 
-elseif abs(alpha - omega0) < 1e-4
-    % 임계감쇠 (Critically Damped)
-    state_str = '임계감쇠 (Critically Damped)';
-    Vc = V0 - V0 * (1 + alpha * t) .* exp(-alpha * t);
+설정한 회로 파라미터에 맞춰 시간($t$)에 따른 커패시터 전압($V_c$) 변화 그래프를 자동으로 출력합니다.
 
-else
-    % 부족감쇠 (Underdamped)
-    state_str = '부족감쇠 (Underdamped)';
-    wd = sqrt(omega0^2 - alpha^2); % 감쇠 고유 진동수
-    Vc = V0 - V0 * exp(-alpha * t) .* (cos(wd * t) + (alpha / wd) * sin(wd * t));
-end
+---
 
-%% 3. 그래프 출력
-figure('Name', 'RLC Circuit Response', 'NumberTitle', 'off');
+## 🛠️ 사용한 언어 및 도구
+* **Language:** MATLAB
+* **Environment:** MATLAB R202x 이상 (또는 GNU Octave)
+* **Version Control:** Git, GitHub
 
-plot(t * 1000, Vc, 'b-', 'LineWidth', 2); grid on; hold on;
-yline(V0, 'r--', '목표 전압 (V_0)', 'LineWidth', 1.5, 'LabelHorizontalAlignment', 'left');
+---
 
-xlabel('시간 (ms)');
-ylabel('커패시터 전압 (V)');
-title(['RLC 직렬회로 과도 응답 : ', state_str]);
-ylim([0, V0 * 1.5]);
+## 📁 파일 구성
+* `main_rlc_simulation.m`: RLC 회로 해석 및 그래프 출력 메인 스크립트
+* `Criticallydamped_result.png`: 임계감쇠 결과 그래프 이미지
+* `overdamped_result.png`: 과감쇠 결과 그래프 이미지
+* `underdamped_result.png`: 부족감쇠 결과 그래프 이미지
+---
+
+## 🚀 설치 및 실행 방법
+
+### 1. 저장소 클론 (Clone)
+Terminal 또는 Git Bash에서 아래 명령어를 실행하여 프로젝트를 내려받습니다.
+```bash
+git clone [https://github.com/kimtaegyeong1231/RLC-Circuit-Simulation.git](https://github.com/kimtaegyeong1231/RLC-Circuit-Simulation.git)
+cd RLC-Circuit-Simulation
