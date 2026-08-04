@@ -22,6 +22,14 @@ Version Control:Git, GitHub
 
 ---
 
+파일 구성
+main_rlc_simulation.m: RLC회로 해석 및 그래프 출력 메인 스크립트
+Criticallydamped_result.png: 임계감쇠 결과 그래프 이미지
+overdamped_result.png: 과감쇠 결과 그래프 이미지
+underdamped_result.png:부족감쇠 결과 그래프 이미지
+
+---
+
 설치 및 실행 방법
 
 저장소 클론 (Clone)
@@ -30,11 +38,3 @@ Terminal 또는 Git Bash에서 아래 명령어를 실행하여 프로젝트를 
 git clone [https://github.com/kimtaegyeong1231/RLC-Circuit-Simulation.git](https://github.com/kimtaegyeong1231/RLC-Circuit-Simulation.git)
 cd RLC-Circuit-Simulation
 
----
-
-
-파일 구성
-main_rlc_simulation.m: RLC회로 해석 및 그래프 출력 메인 스크립트
-Criticallydamped_result.png: 임계감쇠 결과 그래프 이미지
-overdamped_result.png: 과감쇠 결과 그래프 이미지
-underdamped_result.png:부족감쇠 결과 그래프 이미지
