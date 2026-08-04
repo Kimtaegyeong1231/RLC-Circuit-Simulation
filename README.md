@@ -32,6 +32,7 @@ cd RLC-Circuit-Simulation
 
 ---
 
+
 파일 구성
 main_rlc_simulation.m: RLC회로 해석 및 그래프 출력 메인 스크립트
 Criticallydamped_result.png: 임계감쇠 결과 그래프 이미지
