@@ -24,7 +24,7 @@ Version Control:Git, GitHub
 
 설치 및 실행 방법
 
-### 1. 저장소 클론 (Clone)
+저장소 클론 (Clone)
 Terminal 또는 Git Bash에서 아래 명령어를 실행하여 프로젝트를 내려받습니다.
 ```bash
 git clone [https://github.com/kimtaegyeong1231/RLC-Circuit-Simulation.git](https://github.com/kimtaegyeong1231/RLC-Circuit-Simulation.git)
