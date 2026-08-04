@@ -23,10 +23,10 @@ RLC 직렬 회로에서 저항($R$), 인덕턴스($L$), 커패시턴스($C$) 값
 ---
 
 파일 구성
-* `main_rlc_simulation.m`: RLC 회로 해석 및 그래프 출력 메인 스크립트
-* `Criticallydamped_result.png`: 임계감쇠 결과 그래프 이미지
-* `overdamped_result.png`: 과감쇠 결과 그래프 이미지
-* `underdamped_result.png`: 부족감쇠 결과 그래프 이미지
+* main_rlc_simulation.m: RLC 회로 해석 및 그래프 출력 메인 스크립트
+* Criticallydamped_result.png: 임계감쇠 결과 그래프 이미지
+* overdamped_result.png: 과감쇠 결과 그래프 이미지
+* underdamped_result.png: 부족감쇠 결과 그래프 이미지
 ---
 
 설치 및 실행 방법
